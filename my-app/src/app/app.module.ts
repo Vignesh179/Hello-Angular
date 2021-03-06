@@ -1,34 +1,29 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { ContactusComponent } from './contactus/contactus.component';
-import { AboutComponent } from './about/about.component';
+import { ItemComponent } from './item/item.component';
+import { ItemModule } from './item/item.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTabsModule} from '@angular/material/tabs';
-
+import { MatSliderModule } from '@angular/material/slider';
+import { AppService } from './app.service';
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    ContactusComponent,
-    AboutComponent
+    AppComponent
   ],
   imports: [
+    MatSliderModule,
+    ItemModule,
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatGridListModule,
-    MatMenuModule,
-    MatTabsModule
+    FormsModule,
+    CommonModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AppService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
